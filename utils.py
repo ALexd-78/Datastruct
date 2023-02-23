@@ -1,5 +1,5 @@
 class Node:
-    def __init__(self, data, next_node, next=None):
+    def __init__(self, data, next_node):
         self.data = data
         self.next_node = next_node
 
@@ -31,4 +31,4 @@ print(stack.top.data)
 print(stack.top.next_node.data)
 print(stack.top.next_node.next_node.data)
 print(stack.top.next_node.next_node.next_node)
-print(stack.top.next_node.next_node.next_node.data)
+# print(stack.top.next_node.next_node.next_node.data)
