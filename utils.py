@@ -1,7 +1,7 @@
 class Node:
-    def __init__(self, data):
+    def __init__(self, data, next_node):
         self.data = data
-        self.next_node = None
+        self.next_node = next_node
 
 class Stack:
 
@@ -11,8 +11,8 @@ class Stack:
 
 
     def push(self, data):
-        new_node = Node(data)
-        new_node.next_node = self.top
+        next_node = self.top
+        new_node = Node(data, next_node)
         self.top = new_node
 
     def pop(self):
