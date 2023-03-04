@@ -1,8 +1,7 @@
 import unittest
 
-
 from utils import Node, Stack
-
+from custom_queue import Node, Queue
 
 class TestNode(unittest.TestCase):
     '''Тест для класса Node'''
