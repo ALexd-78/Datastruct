@@ -1,8 +1,7 @@
 import unittest
 
-
 from utils import Node, Stack
-
+from custom_queue import Node, Queue
 
 class TestNode(unittest.TestCase):
     '''Тест для класса Node'''
@@ -39,5 +38,22 @@ class TestStack(unittest.TestCase):
         stack.push('data2')
         data = stack.pop()
         self.assertEqual(stack.top.data, 'data1')
+
+
+class TestQueue(unittest.TestCase):
+    '''Тест для класса Queue'''
+    def test_queue_empty(self):
+        queue = Queue()
+        self.assertEqual(queue.head, None)
+        self.assertEqual(queue.tail, None)
+
+
+    def test_enqueue(self):
+        queue = Queue()
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        self.assertEqual(queue.head.data, 'data1')
+        self.assertEqual(queue.tail.next_node, None)
+
 # if __name__ == '__main__':
 #     unittest.main()
