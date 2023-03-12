@@ -16,7 +16,7 @@ class Queue:
 
     def enqueue(self, data):
         '''Добавляет данные в очередь.
-    Связывание данных в очереди происходит прямо в методе'''
+        Связывание данных в очереди происходит прямо в методе'''
         new_node = Node(data, next_node=None)
         if self.head is None:
             self.head = new_node
@@ -25,13 +25,29 @@ class Queue:
             self.tail.next_node = new_node
             self.tail = new_node
 
+
+    def dequeue(self):
+        '''Удаляет из очереди крайний левый элемент (первый добавленный)
+        и возвращает данные удаленного экземпляра класса Node'''
+        if self.head is None:
+            return None
+        dequeue_unit = self.head
+        self.head = self.head.next_node
+        return dequeue_unit.data
+
 queue = Queue()
 queue.enqueue('data1')
 queue.enqueue('data2')
 queue.enqueue('data3')
 
-print(queue.head.data)
-print(queue.head.next_node.data)
-print(queue.tail.data)
-print(queue.tail.next_node)
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+print(queue.dequeue())
+
+# print(queue.head.data)
+# print(queue.head.next_node.data)
+# print(queue.tail.data)
+# print(queue.tail.next_node)
+
 # print(queue.tail.next_node.data)
