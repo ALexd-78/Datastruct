@@ -1,21 +1,27 @@
 class Node:
+    '''Класс Node имеет 2 атрибута:
+    данные и ссылка на следующи  узел'''
     def __init__(self, data, next_node):
         self.data = data
         self.next_node = next_node
 
 class Stack:
-
+    '''Хранит ссылку на верхний(крайний в стэке) узел'''
     def __init__(self):
         self.top = None
 
 
 
     def push(self, data):
+        '''Добавляет данные в стэк.
+        Связывание данных в стэке происходит прямо в методе'''
         next_node = self.top
         new_node = Node(data, next_node)
         self.top = new_node
 
     def pop(self):
+        '''Удаляет из стэка верхний (последним добавленный) элемент и
+        возвращает данные удалённого экземпляра класса Node'''
         if self.top is None:
             return None
         removed_data = self.top.data
