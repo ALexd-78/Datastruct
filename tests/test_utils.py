@@ -55,5 +55,13 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.head.data, 'data1')
         self.assertEqual(queue.tail.next_node, None)
 
+
+    def test_dequeue(self):
+        queue = Queue()
+        queue.enqueue('data1')
+        queue.enqueue('data2')
+        self.assertEqual(queue.dequeue(), 'data1')
+        self.assertEqual(queue.dequeue(), 'data2')
+        self.assertEqual(queue.dequeue(), None)
 # if __name__ == '__main__':
 #     unittest.main()
