@@ -2,7 +2,7 @@ import unittest
 
 from utils import Node, Stack
 from custom_queue import Node, Queue
-from linked_list import Node
+
 
 class TestNode(unittest.TestCase):
     '''Тест для класса Node'''
@@ -65,27 +65,6 @@ class TestQueue(unittest.TestCase):
         self.assertEqual(queue.dequeue(), 'data2')
         self.assertEqual(queue.dequeue(), None)
 
-# class TestLinkedList(unittest.TestCase):
-#         '''Тест для класса LinkedList'''
-
-        # def test_queue_empty(self):
-        #     ll = LinkedList()
-        #     self.assertEqual(ll.head, None)
-        #     self.assertEqual(ll.tail, None)
-        #
-        #
-        # def test_insert_beginning(self):
-        #     ll = LinkedList()
-        #     ll.insert_beginning({'id': 1})
-        #     self.assertEqual(ll.head, {'id': 1})
-        #     self.assertEqual(ll.tail, None)
-        #
-        #
-        # def test_insert_at_end(self):
-        #     ll = LinkedList()
-        #     ll.insert_at_end({'id': 2})
-        #     self.assertEqual(ll.head, None)
-        #     self.assertEqual(ll.tail, {'id': 2})
 
 # if __name__ == '__main__':
 #     unittest.main()
