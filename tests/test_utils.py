@@ -6,7 +6,7 @@ from custom_queue import Node, Queue
 
 class TestNode(unittest.TestCase):
     '''Тест для класса Node'''
-    def test_node_(self):
+    def test_node(self):
         node = Node(1, None)
         self.assertEqual(node.data, 1)
         self.assertEqual(node.next_node, None)
