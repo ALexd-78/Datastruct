@@ -14,7 +14,7 @@ class LinkedList:
 
 
 
-    def insert_beginning(self, data):
+    def insert_beginning(self, data: list):
         '''принимает данные (словарь) и добавляет узел с этими данными в начало связанного списка'''
         new_node = Node(data)
         if self.head is None:
@@ -38,6 +38,7 @@ class LinkedList:
 
 
     def print_ll(self):
+        '''Выводит данные в консоль из односвязного списка'''
         ll_string = ''
         node = self.head
         if node is None:
@@ -50,12 +51,50 @@ class LinkedList:
         print(ll_string)
 
 
-# ll = LinkedList()
+    def to_list(self):
+        '''Возвращает список с данными, содержащимися в односвязном списке'''
+        ll_node = []
+        node = self.head
+        while node:
+            ll_node.append(node.data)
+            node = node.next_node
+        return ll_node
+
+
+    def get_data_by_id(self, id):
+        '''возвращает первый найденный в LinkedList словарь с ключом id, значение которого равно переданному в метод значению.'''
+        node = self.head
+        while node:
+            try:
+                if node.data['id'] == id:
+                    return node.data
+                    break
+            except TypeError:
+                print("Данные не являются словарем или в словаре нет id")
+            node = node.next_node
+        if node is None:
+            return f'Словарь с id={id} отсутствует'
+
+
+
+
+
+ll = LinkedList()
 # ll.insert_beginning({'id': 1})
-# ll.print_ll()
 # ll.insert_at_end({'id': 2})
-# ll.print_ll()
 # ll.insert_at_end({'id': 3})
-# ll.print_ll()
 # ll.insert_beginning({'id': 0})
-# ll.print_ll()
+# print(ll.head.data)
+# print(ll.head.next_node.data)
+# print(ll.tail.data)
+# print(ll.tail.next_node)
+# lst = ll.to_list()
+# print(lst)
+
+# ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+# ll.insert_at_end('idusername')
+ll.insert_at_end([1, 2, 3])
+# ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
+
+user_data = ll.get_data_by_id(2)
+print(user_data)
