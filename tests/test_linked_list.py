@@ -62,10 +62,7 @@ class TestLinkedList(unittest.TestCase):
 
     def test_get_data_by_id(self):
         ll = LinkedList()
-        # ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
         ll.insert_at_end('idusername')
-        # ll.insert_at_end([1, 2, 3])
-        # ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
-        self.assertEqual(ll.get_data_by_id(2), 'Данные не являются словарем или в словаре нет id', 'Словарь с id=2 отсутствует')
+        self.assertEqual(ll.get_data_by_id(2), 'Словарь с id=2 отсутствует')
 
 
