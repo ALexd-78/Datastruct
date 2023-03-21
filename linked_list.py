@@ -70,6 +70,7 @@ class LinkedList:
                     return node.data
                     break
             except TypeError:
+                pass
                 print("Данные не являются словарем или в словаре нет id")
             node = node.next_node
         if node is None:
@@ -91,8 +92,8 @@ ll = LinkedList()
 # lst = ll.to_list()
 # print(lst)
 
-# ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
-# ll.insert_at_end('idusername')
+ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+ll.insert_at_end('idusername')
 ll.insert_at_end([1, 2, 3])
 # ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
 
